@@ -52,3 +52,7 @@ p {
 	left: 50%;
 	margin-left: -5em;
 }
+#state1 li {
+	list-style: none;
+	padding: 3em;
+}

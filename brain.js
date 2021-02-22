@@ -27,11 +27,15 @@ class GameInfo {
     setCurrentState(state) {
         this._currentState = state;
     }
-    
 }
 
+var gInfo;
+
+document.addEventListener('DOMContentLoaded', function(){
+    gInfo = new GameInfo();
+});
+
 function enterState(state) {
-    let gInfo = new GameInfo();
     gInfo.setCurrentState(state);
     let gState = gInfo.getGameStates(gInfo.getCurrentState());
     gState.style.opacity = "100%";
@@ -39,7 +43,6 @@ function enterState(state) {
 }
 
 function exitState(nextState) {
-    let gInfo = new GameInfo();
     let gState = gInfo.getGameStates(gInfo.getCurrentState());
     gState.style.opacity = "0%";
     gState.style.transform = "translateY(200%)";
