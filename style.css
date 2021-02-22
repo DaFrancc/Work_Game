@@ -1,0 +1,54 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+html {
+	background-color: black;
+	color: white;
+	font-size: 100%;
+}
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	padding: 1em;
+	font-size: 4em;
+}
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	padding-bottom: 1em;
+	font-size: 2.5em;
+}
+.gameState {
+	position: fixed;
+	left: 50%;
+	margin-left: -50em;
+	margin-top: 7em;
+	transition: .5s;
+	background-color: #505050;
+	border-radius: 5em;
+	width: 100em;
+	height: 50em;
+}
+#state0 {
+	opacity: 0%;
+	transform: translateY(200%);
+}
+#state0 button {
+	position: absolute;
+	height: 5em;
+	width: 10em;
+	left: 50%;
+	margin-left: -5em;
+}
+#state1 {
+	opacity: 0%;
+	transform: translateY(200%);
+}
+#state1 button {
+	position: absolute;
+	height: 5em;
+	width: 10em;
+	left: 50%;
+	margin-left: -5em;
+}
