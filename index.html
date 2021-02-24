@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-		<title>Work Game</title>
+		<title>Fitness Party</title>
 		<link rel="stylesheet" type="text/css" href="style.css" media="screen">
 		<script src="brain.js"></script>
 	</head>
 	<body>
 		<div id="bigDiv">
 			<div class="gameState" id="state0">
-				<section class="wgout">
-					<h1 id="wgouth1">
-						Work Game
+				<section>
+					<h1>
+						Fitness Party
 					</h1>
-					<p id="wgoutp">
+					<p>
 						Press the button to start!
 					</p>
 				</section>
 				<br>
-				<section class="wgin">
+				<section class>
 					<button onclick="exitState(1)">Click me</button>
 				</section>
 			</div>
 			<div class="gameState" id="state1">
-				<section class="wgout">
-					<h1 id="wgouth1">
+				<section>
+					<h1>
 						Work Game
 					</h1>
 				</section>
 				<br>
-				<section class="wgin">
+				<section>
+					<ul>
+						<li><button onclick="exitState(0)">Singleplayer</button></li>
+						<li><button onclick="exitState(0)">Multiplayer</button></li>
+					</ul>
+				</section>
+			</div>
+			<div class="gameState" id="state2">
+				<section>
+					<h1>
+						Work Game
+					</h1>
+				</section>
+				<br>
+				<section>
 					<ul>
 						<li><button onclick="exitState(0)">Singleplayer</button></li>
 						<li><button onclick="exitState(0)">Multiplayer</button></li>

@@ -5,7 +5,8 @@ class GameInfo {
             this._playerScores = [0, 0, 0, 0];
             this._gameStates = [
                 document.getElementById("state0"),
-                document.getElementById("state1")
+                document.getElementById("state1"),
+                document.getElementById("state2")
             ];
             this._numOfRounds = 0;
             this._currentState = 0;        
