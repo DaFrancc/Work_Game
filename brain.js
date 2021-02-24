@@ -6,6 +6,7 @@ class GameInfo {
             this._gameStates = [
                 document.getElementById("state0"),
                 document.getElementById("state1"),
+                document.getElementById("state2"),
                 document.getElementById("state2")
             ];
             this._numOfRounds = 0;
@@ -28,6 +29,9 @@ class GameInfo {
     }
     setCurrentState(state) {
         this._currentState = state;
+    }
+    setNumOfRounds(num) {
+        this._numOfRounds = num;
     }
 }
 
@@ -53,6 +57,11 @@ function exitState(nextState) {
     gState.style.opacity = "0%";
     gState.style.transform = "translateY(200%)";
     enterState(nextState);
+}
+
+// Custom function for State 2 for setting difficulty. No need to check if num is a number as the HTML takes care of that
+function setDifficulty(num) {
+        gInfo.setNumOfRounds(num);
 }
 
 // When the window loads it brings up the first card

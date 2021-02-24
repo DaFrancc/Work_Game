@@ -22,15 +22,16 @@
 				</section>
 			</div>
 			<div class="gameState" id="state1">
-				<section>
-					<h1>
-						Work Game
-					</h1>
-				</section>
-				<br>
-				<section>
+				<section id="topli">
 					<ul>
-						<li><button onclick="exitState(0)">Singleplayer</button></li>
+						<li><button onclick="exitState(0)">?</button></li>
+						<li><h1>Fitness Party</h1></li>
+						<li><button onclick="exitState(0)">*</button></li>
+					</ul>
+				</section>
+				<section id="bottomli">
+					<ul>
+						<li><button onclick="exitState(2)">Singleplayer</button></li>
 						<li><button onclick="exitState(0)">Multiplayer</button></li>
 					</ul>
 				</section>
@@ -38,15 +39,30 @@
 			<div class="gameState" id="state2">
 				<section>
 					<h1>
-						Work Game
+						Choose your difficulty
 					</h1>
+					<p>
+						Difficulty only affects the number of rounds
+					</p>
+				</section>
+				<section id="difficulty">
+					<input id="difficultyinput" type="number" min="1" value="1" onchange="setDifficulty(this.value)">
+					<br><br>
+					<button onclick="exitState(0)">Next</button>
+				</section>
+			</div>
+			<div class="gameState" id="state3">
+				<section>
+					<h1>
+						Fitness Party
+					</h1>
+					<p>
+						Press the button to start!
+					</p>
 				</section>
 				<br>
-				<section>
-					<ul>
-						<li><button onclick="exitState(0)">Singleplayer</button></li>
-						<li><button onclick="exitState(0)">Multiplayer</button></li>
-					</ul>
+				<section class>
+					<button onclick="exitState(1)">Click me</button>
 				</section>
 			</div>
 		</div>

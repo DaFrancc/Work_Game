@@ -3,8 +3,8 @@
 	margin: 0;
 }
 html {
-	background-color: black;
-	color: white;
+	background-color: #F7B54F;
+	color: #4F91F7;
 	font-size: 100%;
 }
 h1 {
@@ -19,40 +19,177 @@ p {
 	padding-bottom: 1em;
 	font-size: 2.5em;
 }
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
 .gameState {
 	position: fixed;
 	left: 50%;
 	margin-left: -50em;
 	margin-top: 7em;
 	transition: .5s;
-	background-color: #505050;
+	background-color: #4FF7ED;
 	border-radius: 5em;
 	width: 100em;
 	height: 50em;
 }
+
+/* State 0 */
+
 #state0 {
 	opacity: 0%;
 	transform: translateY(200%);
 }
 #state0 button {
 	position: absolute;
-	height: 5em;
-	width: 10em;
+	height: 4em;
+	width: 8em;
 	left: 50%;
-	margin-left: -5em;
+	margin-left: -4em;
+	background-color: #00000000;
+	border: .01em solid #4f92f7c0;
+	border-radius: 5em;
+	font-size: 2em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #4f92f7c0;
+	transition: .25s;
 }
+#state0 button:hover {
+	transform: scale(1.1);
+	border: .2em solid #4F91F7;
+	color: #4F91F7;
+}
+
+/* State 1 */
+
 #state1 {
 	opacity: 0%;
 	transform: translateY(200%);
 }
-#state1 button {
-	position: absolute;
-	height: 5em;
-	width: 10em;
-	left: 50%;
-	margin-left: -5em;
+#topli {
+	box-sizing: border-box;
+	text-align: center;
 }
-#state1 li {
+#topli li {
 	list-style: none;
-	padding: 3em;
+	display: inline-block;
+}
+#topli h1 {
+	margin-left: 25rem;
+	margin-right: 25rem;
+}
+#topli button {
+	position: absolute;
+	height: 4em;
+	width: 4em;
+	background-color: #00000000;
+	border: .01em solid #4f92f7c0;
+	border-radius: 5em;
+	font-size: 2em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #4f92f7c0;
+	transition: .25s;
+}
+#topli button:hover {
+	transform: scale(1.1) translate(-45%, -67.5%);;
+	border: .2em solid #4F91F7;
+	color: #4F91F7;
+}
+#topli li button {
+	transform: translate(-50%, -75%);
+}
+
+#bottomli button {
+	position: absolute;
+	height: 4em;
+	width: 8em;
+	left: 50%;
+	margin-left: -4em;
+	background-color: #00000000;
+	border: .01em solid #4f92f7c0;
+	border-radius: 5em;
+	font-size: 2em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #4f92f7c0;
+	transition: .25s;
+}
+#bottomli button:hover {
+	transform: scale(1.1);
+	border: .2em solid #4F91F7;
+	color: #4F91F7;
+}
+#bottomli li {
+	list-style: none;
+	padding: 5em;
+}
+
+/* State 2 */
+
+#state2 {
+	opacity: 0%;
+	transform: translateY(200%);
+}
+#state2 button {
+	position: absolute;
+	height: 3em;
+	width: 8em;
+	left: 50%;
+	margin-left: -4em;
+	background-color: #00000000;
+	border: .01em solid #4f92f7c0;
+	border-radius: 5em;
+	font-size: 2em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #4f92f7c0;
+	transition: .25s;
+}
+#state2 button:hover {
+	transform: scale(1.1);
+	border: .2em solid #4F91F7;
+	color: #4F91F7;
+}
+#state2 li {
+	transform: translateY(-65%);
+	list-style: none;
+	padding: 4em;
+}
+#difficulty {
+	text-align: center;
+}
+#difficultyinput {
+	background-color: #00000000;
+	border: 0;
+	border-bottom: #4F91F7 solid .1em;
+	color: #4F91F7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 5em;
+	width: 1.5em;
+}
+
+/* State 3 */
+
+#state3 {
+	opacity: 0%;
+	transform: translateY(200%);
+}
+#state3 button {
+	position: absolute;
+	height: 3em;
+	width: 8em;
+	left: 50%;
+	margin-left: -4em;
+	background-color: #00000000;
+	border: .01em solid #4f92f7c0;
+	border-radius: 5em;
+	font-size: 2em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #4f92f7c0;
+	transition: .25s;
 }
