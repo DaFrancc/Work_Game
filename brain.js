@@ -7,10 +7,13 @@ class GameInfo {
                 document.getElementById("state0"),
                 document.getElementById("state1"),
                 document.getElementById("state2"),
-                document.getElementById("state2")
+                document.getElementById("state3"),
+                document.getElementById("state4")
             ];
             this._numOfRounds = 0;
-            this._currentState = 0;        
+            this._currentState = 0;
+            this._isMultiplayer = false;
+            this._exercisesList = ['pushups', 'crunches', 'squats'];
     }
     getPlayer(i) {
         return this._players[i];
@@ -27,11 +30,23 @@ class GameInfo {
     getCurrentState() {
         return this._currentState;
     }
+    getIsMultiplayer() {
+        return this._isMultiplayer;
+    }
+    setPlayerName(name, pos) {
+        this._players[pos] = name;
+    }
     setCurrentState(state) {
         this._currentState = state;
     }
     setNumOfRounds(num) {
         this._numOfRounds = num;
+    }
+    setIsMultiplayer(bool) {
+        this._isMultiplayer = bool;
+    }
+    getExercise(pos) {
+        return this._exercisesList[pos];
     }
 }
 
@@ -61,7 +76,44 @@ function exitState(nextState) {
 
 // Custom function for State 2 for setting difficulty. No need to check if num is a number as the HTML takes care of that
 function setDifficulty(num) {
-        gInfo.setNumOfRounds(num);
+    gInfo.setNumOfRounds(num);
+}
+
+// Custom function for State 1 for setting game mode and for changing states based off the game mode chosen
+function state1ExitState(bool) {
+    gInfo.setIsMultiplayer(bool);
+    if(gInfo.getIsMultiplayer() === true) {
+        exitState(3);
+    }
+    else {
+        exitState(2);
+    }
+}
+
+//Sets player's name for the specified player
+function setPlayerName(pos) {
+    let name = document.getElementsByClassName("playerNameInput").item(pos).value;
+    gInfo.setPlayerName(name, pos);
+}
+
+// Custom function that will change a State's information depending on the exercise to save memory
+function exitToRandomExercise() {
+    let randNum = Math.floor(Math.random() * gInfo._exercisesList.length);
+    let exercise = gInfo.getExercise(randNum);
+    switch(exercise) {
+        case 'pushups':
+            alert('Pushups');
+            break;
+        case 'crunches':
+            alert('Crunches');
+            break;
+        case 'squats':
+            alert('Squats');
+            break;
+        default:
+            alert('An error has occurred in selecting an exercise');
+            break;
+    }
 }
 
 // When the window loads it brings up the first card

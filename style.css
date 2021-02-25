@@ -2,10 +2,18 @@
 	padding: 0;
 	margin: 0;
 }
-html {
-	background-color: #F7B54F;
+body {
 	color: #4F91F7;
 	font-size: 100%;
+}
+.gradient {
+	/* Old browsers */
+    background: #141E30;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(135deg, #F7B54F, #F77D4F);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(135deg, #F7B54F, #F77D4F);
+	background-attachment: fixed;
 }
 h1 {
 	font-family: Arial, Helvetica, sans-serif;
@@ -35,13 +43,13 @@ input[type=number]::-webkit-outer-spin-button {
 	margin-left: -50em;
 	margin-top: 7em;
 	transition: .5s;
-	background-color: #4FF7ED;
+	background-color: #4ff7ec;
 	border-radius: 5em;
 	width: 100em;
 	height: 50em;
 }
 
-/* State 0 */
+/* State 0 - Welcome Screen */
 
 #state0 {
 	opacity: 0%;
@@ -192,4 +200,42 @@ input[type=number]::-webkit-outer-spin-button {
 	font-family: Arial, Helvetica, sans-serif;
 	color: #4f92f7c0;
 	transition: .25s;
+}
+#state3in {
+	text-align: center;
+}
+.playerNameInput {
+	background-color: #00000000;
+	border: 0;
+	border-bottom: #4F91F7 solid .1em;
+	color: #4F91F7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 5em;
+	width: 10em;
+}
+
+/* State 4 */
+
+#state4 {
+	opacity: 0%;
+	transform: translateY(200%);
+}
+#state4 button {
+	position: absolute;
+	height: 4em;
+	width: 8em;
+	left: 50%;
+	margin-left: -4em;
+	background-color: #00000000;
+	border: .01em solid #4f92f7c0;
+	border-radius: 5em;
+	font-size: 2em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #4f92f7c0;
+	transition: .25s;
+}
+#state4 button:hover {
+	transform: scale(1.1);
+	border: .2em solid #4F91F7;
+	color: #4F91F7;
 }

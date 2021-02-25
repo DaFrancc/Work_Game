@@ -5,10 +5,10 @@
 		<link rel="stylesheet" type="text/css" href="style.css" media="screen">
 		<script src="brain.js"></script>
 	</head>
-	<body>
+	<body class="gradient">
 		<div id="bigDiv">
 
-<!-- State 0 -->
+<!-- State 0 - Welcome Screen -->
 
 			<div class="gameState" id="state0">
 				<section>
@@ -21,11 +21,11 @@
 				</section>
 				<br>
 				<section class>
-					<button onclick="exitState(1)">Click me</button>
+					<button onclick="exitState(1)">Start</button>
 				</section>
 			</div>
 
-<!-- State 1 -->
+<!-- State 1 - Mode Selector -->
 
 			<div class="gameState" id="state1">
 				<section id="topli">
@@ -37,13 +37,13 @@
 				</section>
 				<section id="bottomli">
 					<ul>
-						<li><button onclick="exitState(2)">Singleplayer</button></li>
-						<li><button onclick="exitState(0)">Multiplayer</button></li>
+						<li><button onclick="state1ExitState(false)">Singleplayer</button></li>
+						<li><button onclick="state1ExitState(true)">Multiplayer</button></li>
 					</ul>
 				</section>
 			</div>
 
-<!-- State 2 -->
+<!-- State 2 - Difficulty Selector -->
 
 			<div class="gameState" id="state2">
 				<section>
@@ -68,6 +68,24 @@
 			<div class="gameState" id="state3">
 				<section>
 					<h1>
+						Enter player names
+					</h1>
+				</section>
+				<section id="state3in">
+					<input class="playerNameInput" type="text" onchange="setPlayerName(0)"><br>
+					<input class="playerNameInput" type="text" onchange="setPlayerName(1)"><br>
+					<input class="playerNameInput" type="text" onchange="setPlayerName(2)"><br>
+					<input class="playerNameInput" type="text" onchange="setPlayerName(3)"><br>
+					<br><br>
+					<button onclick="exitState(2)">Next</button>
+				</section>
+			</div>
+
+<!-- State 4 -->
+
+			<div class="gameState" id="state4">
+				<section>
+					<h1>
 						Fitness Party
 					</h1>
 					<p>
@@ -79,6 +97,7 @@
 					<button onclick="exitState(1)">Click me</button>
 				</section>
 			</div>
+
 		</div>
 	</body>
 </html>
