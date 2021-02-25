@@ -59,11 +59,11 @@
 				<section id="difficulty">
 					<input id="difficultyinput" type="number" min="1" value="1" onchange="setDifficulty(this.value)">
 					<br><br>
-					<button onclick="exitState(0)">Next</button>
+					<button onclick="exitState(5)">Next</button>
 				</section>
 			</div>
 
-<!-- State 3 -->
+<!-- State 3 Enter Player Names -->
 
 			<div class="gameState" id="state3">
 				<section>
@@ -81,7 +81,7 @@
 				</section>
 			</div>
 
-<!-- State 4 -->
+<!-- State 4 Workout Screen (brain.js will rewrite this throughout the game) -->
 
 			<div class="gameState" id="state4">
 				<section>
@@ -95,6 +95,23 @@
 				<br>
 				<section class>
 					<button onclick="exitState(1)">Click me</button>
+				</section>
+			</div>
+
+<!-- State 5 - Good Job -->
+
+			<div class="gameState" id="state5">
+				<section>
+					<h1>
+						Good job!
+					</h1>
+					<p>
+						Here is your score:
+					</p>
+					<p id="state5Score"></p>
+				</section>
+				<section class>
+					<button onclick="exitToRandomExercise()">Next Exercise</button>
 				</section>
 			</div>
 

@@ -37,6 +37,7 @@ input[type=number]::-webkit-outer-spin-button {
       -webkit-appearance: none; 
       margin: 0; 
 }
+/* A class that is applied to every State div to give them their "card-like" appearances */
 .gameState {
 	position: fixed;
 	left: 50%;
@@ -235,6 +236,32 @@ input[type=number]::-webkit-outer-spin-button {
 	transition: .25s;
 }
 #state4 button:hover {
+	transform: scale(1.1);
+	border: .2em solid #4F91F7;
+	color: #4F91F7;
+}
+
+/* State 5 */
+
+#state5 {
+	opacity: 0%;
+	transform: translateY(200%);
+}
+#state5 button {
+	position: absolute;
+	height: 4em;
+	width: 8em;
+	left: 50%;
+	margin-left: -4em;
+	background-color: #00000000;
+	border: .01em solid #4f92f7c0;
+	border-radius: 5em;
+	font-size: 2em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #4f92f7c0;
+	transition: .25s;
+}
+#state5 button:hover {
 	transform: scale(1.1);
 	border: .2em solid #4F91F7;
 	color: #4F91F7;

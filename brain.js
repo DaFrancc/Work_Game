@@ -8,12 +8,14 @@ class GameInfo {
                 document.getElementById("state1"),
                 document.getElementById("state2"),
                 document.getElementById("state3"),
-                document.getElementById("state4")
+                document.getElementById("state4"),
+                document.getElementById("state5")
             ];
             this._numOfRounds = 0;
             this._currentState = 0;
             this._isMultiplayer = false;
             this._exercisesList = ['pushups', 'crunches', 'squats'];
+            this._currentExercise = -1;
     }
     getPlayer(i) {
         return this._players[i];
@@ -33,6 +35,12 @@ class GameInfo {
     getIsMultiplayer() {
         return this._isMultiplayer;
     }
+    getExerciseFromList(pos) {
+        return this._exercisesList[pos];
+    }
+    getCurrentExercise() {
+        return this._currentExercise;
+    }
     setPlayerName(name, pos) {
         this._players[pos] = name;
     }
@@ -45,8 +53,8 @@ class GameInfo {
     setIsMultiplayer(bool) {
         this._isMultiplayer = bool;
     }
-    getExercise(pos) {
-        return this._exercisesList[pos];
+    setCurrentExercise(num) {
+        this._currentExercise = num;
     }
 }
 
@@ -99,7 +107,11 @@ function setPlayerName(pos) {
 // Custom function that will change a State's information depending on the exercise to save memory
 function exitToRandomExercise() {
     let randNum = Math.floor(Math.random() * gInfo._exercisesList.length);
-    let exercise = gInfo.getExercise(randNum);
+    while(randNum === gInfo.getCurrentExercise()) {
+        randNum = Math.floor(Math.random() * gInfo._exercisesList.length);
+    }
+    gInfo.setCurrentExercise(randNum);
+    let exercise = gInfo.getExerciseFromList(randNum);
     switch(exercise) {
         case 'pushups':
             alert('Pushups');
