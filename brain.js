@@ -9,7 +9,8 @@ class GameInfo {
                 document.getElementById("state2"),
                 document.getElementById("state3"),
                 document.getElementById("state4"),
-                document.getElementById("state5")
+                document.getElementById("state5"),
+                document.getElementById("state6")
             ];
             this._numOfRounds = 0;
             this._currentState = 0;
