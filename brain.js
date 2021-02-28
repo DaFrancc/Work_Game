@@ -54,14 +54,28 @@ class GameInfo {
     setCurrentExercise(num) {
         this._currentExercise = num;
     }
+    calculateScore(player, isWinner) {
+        switch(this.getCurrentExercise()) {
+            case 0:
+                this._playerScores[player] += totalSeconds;
+                if(isWinner) {this._playerScores[player] += 25;}
+                break;
+            default:
+                alert(`There has been an error calculating player ${player}'s score`);
+        }
+    }
 }
 
 // Initializes global variable gInfo
 var gInfo;
+var minutesLabel;
+var secondsLabel;
 
 // Assigns a GameInfo object to gInfo once the page fully loads
 document.addEventListener('DOMContentLoaded', function(){
     gInfo = new GameInfo();
+    minutesLabel = document.getElementById("minutes");
+    secondsLabel = document.getElementById("seconds");
 });
 
 // Pulls up a card. Should rarely be called manually as it is called by exitState()
@@ -109,10 +123,10 @@ function getRandomExercise() {
         randNum = Math.floor(Math.random() * 20);
     }
     gInfo.setCurrentExercise(randNum);
-    var title = null;
-    var str = null;
-    var picture = null;
-    switch(randNum) {
+    let title = null;
+    let str = null;
+    let picture = null;
+    switch(0) {
         case 0:
             title = document.createElement("h1");
             title.id = "state4h1";
@@ -126,7 +140,7 @@ function getRandomExercise() {
             picture.style.width = "40em";
             document.getElementById("state4content").style.textAlign = "center";
             document.getElementById("state4content").appendChild(picture);
-            exitState(5);
+            exitState(4);
             break;
         case 1:
             title = document.createElement("h1");
@@ -420,12 +434,96 @@ function getRandomExercise() {
     }
 }
 
-function startExercise() {
-    switch(gInfo.getCurrentExercise()) {
-        case 0:
 
+var totalSeconds = 0;
+var timer;
+var score = 0;
+
+function setTime() {
+  ++totalSeconds;
+  secondsLabel.innerHTML = pad(totalSeconds % 60);
+  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
+
+function pad(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
+}
+
+function startExercise() {
+    let title = null;
+    let str = null;
+    let picture = null;
+    switch(0) {
+        case 0:
+            title = document.createElement("h1");
+            title.id = "state5h1";
+            str = document.createTextNode('Pushups');
+            title.appendChild(str);
+            document.getElementById("state5title").insertBefore(title, document.getElementById("timer"));
+            picture = document.createElement("img");
+            picture.id = "state5img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state5content").style.textAlign = "center";
+            document.getElementById("state5content").appendChild(picture);
+            exitState(5);
+            timer = setInterval(setTime, 1000);
+            break;
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 5:
+            break;
+        case 6:
+            break;
+        case 7:
+            break;
+        case 8:
+            break;
+        case 9:
+            break;
+        case 10:
+            break;
+        case 11:
+            break;
+        case 12:
+            break;
+        case 13:
+            break;
+        case 14:
+            break;
+        case 15:
+            break;
+        case 16:
+            break;
+        case 17:
+            break;
+        case 18:
+            break;
+        case 19:
+            break;
     }
 }
+
+function finishExercise() {
+    document.getElementById("state5h1").remove();
+    document.getElementById("state5img").remove();
+    clearInterval(timer);
+    exitState(6);
+}
+
+
 function exitToRandomExercise() {
     document.getElementById("state4h1").remove();
     document.getElementById("state4img").remove();

@@ -95,16 +95,19 @@
 				<section id="state4content">
 
 				</section>
-				<button onclick="exitState(5)">Start Exercise</button>
+				<button onclick="startExercise()">Start Exercise</button>
 			</div>
 
 <!-- State 5 Workout Screen (brain.js will rewrite this throughout the game) -->
 
 			<div class="gameState" id="state5">
 				<section id="state5title">
-					<h1 id="timer">0:00</h1>
+					<h2 id="timer"><span id="minutes">00</span>:<span id="seconds">00</span></h2>
 				</section>
-				<button id="state5optout" type="button" onclick="exitState(6)">Finish</button>
+				<section id="state5content">
+
+				</section>
+				<button id="state5optout" onclick="finishExercise()">Finish</button>
 			</div>
 
 <!-- State 6 - Good Job -->

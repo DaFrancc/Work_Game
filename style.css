@@ -23,6 +23,13 @@ h1 {
 	padding: 1em;
 	font-size: 4em;
 }
+h2 {
+	font-family: "cooper-black-std", serif;
+	font-weight: 400;
+	font-style: normal;
+	text-align: center;
+	font-size: 4em;
+}
 #state0 h1 {
 	font-size: 8em;
 	line-height: .5em;
