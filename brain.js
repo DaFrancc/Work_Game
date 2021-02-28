@@ -10,7 +10,8 @@ class GameInfo {
                 document.getElementById("state3"),
                 document.getElementById("state4"),
                 document.getElementById("state5"),
-                document.getElementById("state6")
+                document.getElementById("state6"),
+                document.getElementById("state7")
             ];
             this._numOfRounds = 0;
             this._currentState = 0;
@@ -125,7 +126,7 @@ function getRandomExercise() {
             picture.style.width = "40em";
             document.getElementById("state4content").style.textAlign = "center";
             document.getElementById("state4content").appendChild(picture);
-            exitState(4);
+            exitState(5);
             break;
         case 1:
             title = document.createElement("h1");
@@ -416,6 +417,13 @@ function getRandomExercise() {
         default:
             alert('An error has occurred in selecting an exercise');
             break;
+    }
+}
+
+function startExercise() {
+    switch(gInfo.getCurrentExercise()) {
+        case 0:
+
     }
 }
 function exitToRandomExercise() {

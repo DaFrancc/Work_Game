@@ -86,7 +86,7 @@
 				</section>
 			</div>
 
-<!-- State 4 Workout Screen (brain.js will rewrite this throughout the game) -->
+<!-- State 4 Workout Intro Screen (brain.js will rewrite this throughout the game) -->
 
 			<div class="gameState" id="state4">
 				<section id="state4title">
@@ -95,12 +95,21 @@
 				<section id="state4content">
 
 				</section>
-				<button id="state4button" type="button" onclick="exitToRandomExercise()">Start Exercise</button>
+				<button onclick="exitState(5)">Start Exercise</button>
 			</div>
 
-<!-- State 5 - Good Job -->
+<!-- State 5 Workout Screen (brain.js will rewrite this throughout the game) -->
 
 			<div class="gameState" id="state5">
+				<section id="state5title">
+					<h1 id="timer">0:00</h1>
+				</section>
+				<button id="state5optout" type="button" onclick="exitState(6)">Finish</button>
+			</div>
+
+<!-- State 6 - Good Job -->
+
+			<div class="gameState" id="state6">
 				<section>
 					<h1>
 						Good job!
@@ -114,14 +123,14 @@
 				</section>
 			</div>
 
-<!-- State 6 - Final Score Singleplayer -->
+<!-- State 7 - Final Score Singleplayer -->
 
-			<div class="gameState" id="state6">
+			<div class="gameState" id="state7">
 				<section>
 					<h1>
 						Calculating...
 					</h1>
-					<p id="state6Score"></p>
+					<p id="state7Score"></p>
 				</section>
 				<section class>
 					<button onclick="exitToRandomExercise()">Next Exercise</button>
