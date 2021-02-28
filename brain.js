@@ -1,4 +1,4 @@
-// Stores info to conviniently access about the game
+// Stores info to conveniently  access about the game
 class GameInfo {
     constructor() {
             this._players = ['', '', '', '']; 
@@ -15,7 +15,6 @@ class GameInfo {
             this._numOfRounds = 0;
             this._currentState = 0;
             this._isMultiplayer = false;
-            this._exercisesList = ['pushups', 'crunches', 'squats'];
             this._currentExercise = -1;
     }
     getPlayer(i) {
@@ -35,9 +34,6 @@ class GameInfo {
     }
     getIsMultiplayer() {
         return this._isMultiplayer;
-    }
-    getExerciseFromList(pos) {
-        return this._exercisesList[pos];
     }
     getCurrentExercise() {
         return this._currentExercise;
@@ -106,27 +102,326 @@ function setPlayerName(pos) {
 }
 
 // Custom function that will change a State's information depending on the exercise to save memory
-function exitToRandomExercise() {
-    let randNum = Math.floor(Math.random() * gInfo._exercisesList.length);
+function getRandomExercise() {
+    let randNum = Math.floor(Math.random() * 20);
     while(randNum === gInfo.getCurrentExercise()) {
-        randNum = Math.floor(Math.random() * gInfo._exercisesList.length);
+        randNum = Math.floor(Math.random() * 20);
     }
     gInfo.setCurrentExercise(randNum);
-    let exercise = gInfo.getExerciseFromList(randNum);
-    switch(exercise) {
-        case 'pushups':
-            alert('Pushups');
+    var title = null;
+    var str = null;
+    var picture = null;
+    switch(randNum) {
+        case 0:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Pushups');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
             break;
-        case 'crunches':
-            alert('Crunches');
+        case 1:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Normal Planks');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
             break;
-        case 'squats':
-            alert('Squats');
+        case 2:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Squats');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
+            break;
+        case 3:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Triceps Box Steps');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
+            break;
+        case 4:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Pushups Against Table');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
+            break;
+        case 5:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Bodyweight Triceps Dip');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
+            break;
+        case 6:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Shoulder Pushup Taps');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
+            break;
+        case 7:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Diamond Pushup');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
+            break;
+        case 8:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Squats');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
+            break;
+        case 9:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Lunges');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
+            break;
+        case 10:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Jump Squats');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
+            break;
+        case 11:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Wall Sits');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
+            break;
+        case 12:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Step Ups');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
+            break;
+        case 13:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Calf Raises');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
+            break;
+        case 14:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Lunge Jump');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
+            break;
+        case 15:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Commando Planks');
+            title.appendChild(str);
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
+            break;
+        case 16:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Single Hand Plank');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
+            break;
+        case 17:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Single Leg Plank');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
+            break;
+        case 18:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Situps');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
+            break;
+        case 19:
+            title = document.createElement("h1");
+            title.id = "state4h1";
+            str = document.createTextNode('Burpees');
+            title.appendChild(str);
+            document.getElementById("state4content").appendChild(title);
+            picture = document.createElement("img");
+            picture.id = "state4img";
+            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.style.height = "20em";
+            picture.style.width = "40em";
+            document.getElementById("state4content").style.textAlign = "center";
+            document.getElementById("state4content").appendChild(picture);
+            exitState(4);
             break;
         default:
             alert('An error has occurred in selecting an exercise');
             break;
     }
+}
+function exitToRandomExercise() {
+    document.getElementById("state4h1").remove();
+    document.getElementById("state4img").remove();
+    getRandomExercise();
 }
 
 // When the window loads it brings up the first card

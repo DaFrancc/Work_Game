@@ -16,13 +16,20 @@ body {
 	background-attachment: fixed;
 }
 h1 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: "cooper-black-std", serif;
+	font-weight: 400;
+	font-style: normal;
 	text-align: center;
 	padding: 1em;
 	font-size: 4em;
 }
+#state0 h1 {
+	font-size: 8em;
+	line-height: .5em;
+	margin-bottom: 1em;
+}
 p {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Fredoka One', cursive;
 	text-align: center;
 	padding-bottom: 1em;
 	font-size: 2.5em;
@@ -66,7 +73,7 @@ input[type=number]::-webkit-outer-spin-button {
 	border: .01em solid #4f92f7c0;
 	border-radius: 5em;
 	font-size: 2em;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Fredoka One', cursive;
 	color: #4f92f7c0;
 	transition: .25s;
 }
@@ -102,7 +109,7 @@ input[type=number]::-webkit-outer-spin-button {
 	border: .01em solid #4f92f7c0;
 	border-radius: 5em;
 	font-size: 2em;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Fredoka One', cursive;
 	color: #4f92f7c0;
 	transition: .25s;
 }
@@ -125,7 +132,7 @@ input[type=number]::-webkit-outer-spin-button {
 	border: .01em solid #4f92f7c0;
 	border-radius: 5em;
 	font-size: 2em;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Fredoka One', cursive;
 	color: #4f92f7c0;
 	transition: .25s;
 }
@@ -155,7 +162,7 @@ input[type=number]::-webkit-outer-spin-button {
 	border: .01em solid #4f92f7c0;
 	border-radius: 5em;
 	font-size: 2em;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Fredoka One', cursive;
 	color: #4f92f7c0;
 	transition: .25s;
 }
@@ -177,7 +184,7 @@ input[type=number]::-webkit-outer-spin-button {
 	border: 0;
 	border-bottom: #4F91F7 solid .1em;
 	color: #4F91F7;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 5em;
 	width: 1.5em;
 }
@@ -198,7 +205,7 @@ input[type=number]::-webkit-outer-spin-button {
 	border: .01em solid #4f92f7c0;
 	border-radius: 5em;
 	font-size: 2em;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Fredoka One', cursive;
 	color: #4f92f7c0;
 	transition: .25s;
 }
@@ -210,7 +217,7 @@ input[type=number]::-webkit-outer-spin-button {
 	border: 0;
 	border-bottom: #4F91F7 solid .1em;
 	color: #4F91F7;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 5em;
 	width: 10em;
 }
@@ -231,7 +238,7 @@ input[type=number]::-webkit-outer-spin-button {
 	border: .01em solid #4f92f7c0;
 	border-radius: 5em;
 	font-size: 2em;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Fredoka One', cursive;
 	color: #4f92f7c0;
 	transition: .25s;
 }
@@ -257,7 +264,7 @@ input[type=number]::-webkit-outer-spin-button {
 	border: .01em solid #4f92f7c0;
 	border-radius: 5em;
 	font-size: 2em;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Fredoka One', cursive;
 	color: #4f92f7c0;
 	transition: .25s;
 }
@@ -283,7 +290,7 @@ input[type=number]::-webkit-outer-spin-button {
 	border: .01em solid #4f92f7c0;
 	border-radius: 5em;
 	font-size: 2em;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Fredoka One', cursive;
 	color: #4f92f7c0;
 	transition: .25s;
 }

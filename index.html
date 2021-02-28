@@ -4,6 +4,11 @@
 		<title>Fitness Party</title>
 		<link rel="stylesheet" type="text/css" href="style.css" media="screen">
 		<script src="brain.js"></script>
+		<!-- Cooper Black -->
+		<link rel="stylesheet" href="https://use.typekit.net/jqn3esk.css">
+		<!-- Fredoka One -->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Raleway&display=swap" rel="stylesheet">
 	</head>
 	<body class="gradient">
 		<div id="bigDiv">
@@ -59,7 +64,7 @@
 				<section id="difficulty">
 					<input id="difficultyinput" type="number" min="1" value="1" onchange="setDifficulty(this.value)">
 					<br><br>
-					<button onclick="exitState(5)">Next</button>
+					<button onclick="getRandomExercise()">Next</button>
 				</section>
 			</div>
 
@@ -84,18 +89,13 @@
 <!-- State 4 Workout Screen (brain.js will rewrite this throughout the game) -->
 
 			<div class="gameState" id="state4">
-				<section>
-					<h1>
-						Fitness Party
-					</h1>
-					<p>
-						Press the button to start!
-					</p>
+				<section id="state4title">
+
 				</section>
-				<br>
-				<section class>
-					<button onclick="exitState(1)">Click me</button>
+				<section id="state4content">
+
 				</section>
+				<button id="state4button" type="button" onclick="exitToRandomExercise()">Start Exercise</button>
 			</div>
 
 <!-- State 5 - Good Job -->
@@ -108,7 +108,6 @@
 					<p>
 						Here is your score for this round:
 					</p>
-					<p id="state5Score"></p>
 				</section>
 				<section class>
 					<button onclick="exitToRandomExercise()">Next Exercise</button>
@@ -122,7 +121,7 @@
 					<h1>
 						Calculating...
 					</h1>
-					<p id="state5Score"></p>
+					<p id="state6Score"></p>
 				</section>
 				<section class>
 					<button onclick="exitToRandomExercise()">Next Exercise</button>
