@@ -455,6 +455,8 @@ function pad(val) {
 }
 
 function startExercise() {
+    document.getElementById("state5h1").remove();
+    document.getElementById("state5img").remove();
     let title = null;
     let str = null;
     let picture = null;
@@ -516,18 +518,15 @@ function startExercise() {
     }
 }
 
-function finishExercise() {
-    document.getElementById("state5h1").remove();
-    document.getElementById("state5img").remove();
-    clearInterval(timer);
-    exitState(6);
-}
-
-
-function exitToRandomExercise() {
+function exitToRandomExerciseIntro() {
     document.getElementById("state4h1").remove();
     document.getElementById("state4img").remove();
     getRandomExercise();
+}
+
+function finishExercise() {
+    clearInterval(timer);
+    exitState(6);
 }
 
 // When the window loads it brings up the first card

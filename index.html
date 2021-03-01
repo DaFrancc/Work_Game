@@ -77,7 +77,7 @@
 					</h1>
 				</section>
 				<section id="state3in">
-					<input class="playerNameInput" type="text" onchange="setPlayerName(0)"><br>
+					<input class="playerNameInput" type="text" onchange="setPlayerName(0)" value="Abby"><br>
 					<input class="playerNameInput" type="text" onchange="setPlayerName(1)"><br>
 					<input class="playerNameInput" type="text" onchange="setPlayerName(2)"><br>
 					<input class="playerNameInput" type="text" onchange="setPlayerName(3)"><br>
@@ -95,6 +95,7 @@
 				<section id="state4content">
 
 				</section>
+				<br>
 				<button onclick="startExercise()">Start Exercise</button>
 			</div>
 
@@ -102,11 +103,14 @@
 
 			<div class="gameState" id="state5">
 				<section id="state5title">
+					<h1 id="state5h1"></h1>
 					<h2 id="timer"><span id="minutes">00</span>:<span id="seconds">00</span></h2>
 				</section>
+				<br>
 				<section id="state5content">
-
+					<img id="state5img">
 				</section>
+				<br>
 				<button id="state5optout" onclick="finishExercise()">Finish</button>
 			</div>
 
@@ -122,7 +126,7 @@
 					</p>
 				</section>
 				<section class>
-					<button onclick="exitToRandomExercise()">Next Exercise</button>
+					<button onclick="exitToRandomExerciseIntro()">Next Exercise</button>
 				</section>
 			</div>
 
@@ -136,7 +140,7 @@
 					<p id="state7Score"></p>
 				</section>
 				<section class>
-					<button onclick="exitToRandomExercise()">Next Exercise</button>
+					<button onclick="exitToRandomExerciseIntro()">Next Exercise</button>
 				</section>
 			</div>
 
