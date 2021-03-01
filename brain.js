@@ -42,6 +42,9 @@ class GameInfo {
     setPlayerName(name, pos) {
         this._players[pos] = name;
     }
+	setPlayerScore(pos, score) {
+		this._playerScores[pos] = score;
+	}
     setCurrentState(state) {
         this._currentState = state;
     }
@@ -54,15 +57,16 @@ class GameInfo {
     setCurrentExercise(num) {
         this._currentExercise = num;
     }
-    calculateScore(player, isWinner) {
-        switch(this.getCurrentExercise()) {
-            case 0:
-                this._playerScores[player] += totalSeconds;
-                if(isWinner) {this._playerScores[player] += 25;}
-                break;
-            default:
-                alert(`There has been an error calculating player ${player}'s score`);
+    calculateScore() {
+        let pos = 0;
+        let highestScore = 0;
+        for(let i = 0; i < this._playerScores.length; ++i) {
+            if(this._playerScores[i] > highestScore) {
+                highestScore = this._playerScores[i];
+                pos = i;
+            }
         }
+        this._playerScores[pos] += 10;
     }
 }
 
@@ -434,24 +438,35 @@ function getRandomExercise() {
     }
 }
 
+function setScore(pos, score) {
+	gInfo.setPlayerScore(pos, score);
+}
+
+function finishExercise() {
+    clearInterval(timer);
+    exitToState6();
+	gInfo.calculateScore();
+}
 
 var totalSeconds = 0;
 var timer;
-var score = 0;
 
 function setTime() {
-  ++totalSeconds;
-  secondsLabel.innerHTML = pad(totalSeconds % 60);
-  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+	++totalSeconds;
+	secondsLabel.innerHTML = pad(totalSeconds % 60);
+	minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+	if(totalSeconds >= 3) {
+		finishExercise();
+	}
 }
 
 function pad(val) {
-  var valString = val + "";
-  if (valString.length < 2) {
-    return "0" + valString;
-  } else {
-    return valString;
-  }
+    var valString = val + "";
+    if (valString.length < 2) {
+        return "0" + valString;
+    } else {
+        return valString;
+    }
 }
 
 function startExercise() {
@@ -462,20 +477,37 @@ function startExercise() {
     let picture = null;
     switch(0) {
         case 0:
-            title = document.createElement("h1");
-            title.id = "state5h1";
-            str = document.createTextNode('Pushups');
-            title.appendChild(str);
-            document.getElementById("state5title").insertBefore(title, document.getElementById("timer"));
-            picture = document.createElement("img");
-            picture.id = "state5img";
-            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
-            picture.style.height = "20em";
-            picture.style.width = "40em";
-            document.getElementById("state5content").style.textAlign = "center";
-            document.getElementById("state5content").appendChild(picture);
-            exitState(5);
-            timer = setInterval(setTime, 1000);
+            if(!gInfo.getIsMultiplayer()) {
+                title = document.createElement("h1");
+                title.id = "state5h1";
+                str = document.createTextNode('Pushups');
+                title.appendChild(str);
+                document.getElementById("state5title").insertBefore(title, document.getElementById("timer"));
+                picture = document.createElement("img");
+                picture.id = "state5img";
+                picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+                picture.style.height = "20em";
+                picture.style.width = "40em";
+                document.getElementById("state5content").style.textAlign = "center";
+                document.getElementById("state5content").appendChild(picture);
+                exitState(5);
+                timer = setInterval(setTime, 1000);
+            } else {
+                title = document.createElement("h1");
+                title.id = "state5h1";
+                str = document.createTextNode('Pushups');
+                title.appendChild(str);
+                document.getElementById("state5title").insertBefore(title, document.getElementById("timer"));
+                picture = document.createElement("img");
+                picture.id = "state5img";
+                picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+                picture.style.height = "20em";
+                picture.style.width = "40em";
+                document.getElementById("state5content").style.textAlign = "center";
+                document.getElementById("state5content").appendChild(picture);
+                exitState(5);
+                timer = setInterval(setTime, 1000);
+            }
             break;
         case 1:
             break;
@@ -524,10 +556,67 @@ function exitToRandomExerciseIntro() {
     getRandomExercise();
 }
 
-function finishExercise() {
-    clearInterval(timer);
-    exitState(6);
+function exitToState6() {
+	if(!gInfo.getIsMultiplayer()) {
+		document.getElementById("state6h1").innerHTML = "Type in your scores";
+		let input0 = document.createElement("input");
+		input0.className = "playerScoreInput";
+		input0.type = "number";
+		input0.onchange = function () {setScore(0, this.value);};
+		document.getElementById("state6in").insertBefore(input0, document.getElementById("state6button"));
+	} else {
+		document.getElementById("state6h1").innerHTML = "Type in your scores";
+		let input0 = document.createElement("input");
+		let input1 = document.createElement("input");
+		let input2 = document.createElement("input");
+		let input3 = document.createElement("input");
+		input0.className = "playerScoreInput";
+		input1.className = "playerScoreInput";
+		input2.className = "playerScoreInput";
+		input3.className = "playerScoreInput";
+		input0.type = "number";
+		input1.type = "number";
+		input2.type = "number";
+		input3.type = "number";
+		input0.onchange = function () {setScore(0, this.value);};
+		input1.onchange = function () {setScore(1, this.value);};
+		input2.onchange = function () {setScore(2, this.value);};
+		input3.onchange = function () {setScore(3, this.value);};
+		let pic0 = document.createElement("img");
+		let pic1 = document.createElement("img");
+		let pic2 = document.createElement("img");
+		let pic3 = document.createElement("img");
+		pic0.src = "bluehead.png";
+		pic0.height = "100";
+		pic0.width = "100";
+		pic0.style.transform = "translateY(25%)";
+		pic1.src = "redhead.png";
+		pic1.height = "100";
+		pic1.width = "100";
+		pic1.style.transform = "translateY(25%)";
+		pic2.src = "purplehead.png";
+		pic2.height = "100";
+		pic2.width = "100";
+		pic2.style.transform = "translateY(25%)";
+		pic3.src = "greenhead.png";
+		pic3.height = "100";
+		pic3.width = "100";
+		pic3.style.transform = "translateY(25%)";
+		document.getElementById("state6in").insertBefore(pic0, document.getElementById("state6button"));
+		document.getElementById("state6in").insertBefore(input0, document.getElementById("state6button"));
+		document.getElementById("state6in").insertBefore(pic1, document.getElementById("state6button"));
+		document.getElementById("state6in").insertBefore(input1, document.getElementById("state6button"));
+		document.getElementById("state6in").insertBefore(document.createElement("br"), document.getElementById("state6button"));
+		document.getElementById("state6in").insertBefore(pic2, document.getElementById("state6button"));
+		document.getElementById("state6in").insertBefore(input2, document.getElementById("state6button"));
+		document.getElementById("state6in").insertBefore(pic3, document.getElementById("state6button"));
+		document.getElementById("state6in").insertBefore(input3, document.getElementById("state6button"));
+		document.getElementById("state6in").insertBefore(document.createElement("br"), document.getElementById("state6button"));
+		document.getElementById("state6in").insertBefore(document.createElement("br"), document.getElementById("state6button"));
+	}
+	exitState(6);
 }
+
 
 // When the window loads it brings up the first card
 window.onload = () => {enterState(0);}
