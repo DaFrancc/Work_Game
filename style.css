@@ -89,6 +89,12 @@ input[type=number]::-webkit-outer-spin-button {
 	border: .2em solid #4F91F7;
 	color: #4F91F7;
 }
+#black {
+	transform: translate(80%, -70%);
+}
+#poor {
+	transform: translate(250%, -70%);
+}
 
 /* State 1 */
 
@@ -152,7 +158,12 @@ input[type=number]::-webkit-outer-spin-button {
 	list-style: none;
 	padding: 5em;
 }
-
+#saitama {
+	transform: translate(80%, -70%);
+}
+#dad {
+	transform: translate(250%, -70%);
+}
 /* State 2 */
 
 #state2 {
