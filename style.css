@@ -344,3 +344,64 @@ input[type=number]::-webkit-outer-spin-button {
 	border: .2em solid #4F91F7;
 	color: #4F91F7;
 }
+
+/* State 8 - Welcome Screen */
+
+#state8 {
+	opacity: 0%;
+	transform: translateY(200%);
+}
+#state8 button {
+	position: absolute;
+	height: 4em;
+	width: 8em;
+	left: 50%;
+	margin-left: -4em;
+	background-color: #00000000;
+	border: .01em solid #4f92f7c0;
+	border-radius: 5em;
+	font-size: 2em;
+	font-family: 'Fredoka One', cursive;
+	color: #4f92f7c0;
+	transition: .25s;
+}
+#state8 button:hover {
+	transform: scale(1.1);
+	border: .2em solid #4F91F7;
+	color: #4F91F7;
+}
+#mpwinner {
+	text-align: center;
+}
+#mpwinner h1 {
+	padding: 0;
+}
+
+/* State 9 - Money */
+
+#state9 {
+	opacity: 0%;
+	transform: translateY(200%);
+}
+#state9 button {
+	position: absolute;
+	height: 4em;
+	width: 8em;
+	left: 50%;
+	margin-left: -4em;
+	background-color: #00000000;
+	border: .01em solid #4f92f7c0;
+	border-radius: 5em;
+	font-size: 2em;
+	font-family: 'Fredoka One', cursive;
+	color: #4f92f7c0;
+	transition: .25s;
+}
+#state9 button:hover {
+	transform: scale(1.1);
+	border: .2em solid #4F91F7;
+	color: #4F91F7;
+}
+#state9center {
+	text-align: center;
+}

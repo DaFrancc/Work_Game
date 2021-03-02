@@ -11,7 +11,9 @@ class GameInfo {
                 document.getElementById("state4"),
                 document.getElementById("state5"),
                 document.getElementById("state6"),
-                document.getElementById("state7")
+                document.getElementById("state7"),
+				document.getElementById("state8"),
+				document.getElementById("state9")
             ];
             this._numOfRounds = 0;
             this._currentState = 0;
@@ -74,6 +76,7 @@ class GameInfo {
 var gInfo;
 var minutesLabel;
 var secondsLabel;
+var roundsLeft;
 
 // Assigns a GameInfo object to gInfo once the page fully loads
 document.addEventListener('DOMContentLoaded', function(){
@@ -101,6 +104,7 @@ function exitState(nextState) {
 // Custom function for State 2 for setting difficulty. No need to check if num is a number as the HTML takes care of that
 function setDifficulty(num) {
     gInfo.setNumOfRounds(num);
+	roundsLeft = num;
 }
 
 // Custom function for State 1 for setting game mode and for changing states based off the game mode chosen
@@ -134,14 +138,14 @@ function getRandomExercise() {
         case 0:
             title = document.createElement("h1");
             title.id = "state4h1";
-            str = document.createTextNode('Pushups');
+            str = document.createTextNode(`Pushups - Round ${(gInfo.getNumOfRounds() - roundsLeft + 1)}`);
             title.appendChild(str);
             document.getElementById("state4content").appendChild(title);
             picture = document.createElement("img");
             picture.id = "state4img";
-            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.src = "pushup.gif";
             picture.style.height = "20em";
-            picture.style.width = "40em";
+            picture.style.width = "30em";
             document.getElementById("state4content").style.textAlign = "center";
             document.getElementById("state4content").appendChild(picture);
             exitState(4);
@@ -154,7 +158,7 @@ function getRandomExercise() {
             document.getElementById("state4content").appendChild(title);
             picture = document.createElement("img");
             picture.id = "state4img";
-            picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+            picture.src = "pushup.gif";
             picture.style.height = "20em";
             picture.style.width = "40em";
             document.getElementById("state4content").style.textAlign = "center";
@@ -445,7 +449,12 @@ function setScore(pos, score) {
 function finishExercise() {
     clearInterval(timer);
     exitToState6();
-	gInfo.calculateScore();
+}
+
+function showPlayerScores() {
+	if(!gInfo.getIsMultiplayer()) {
+		document.getElementById("state7score").innerHTML = `Your score is:${gInfo.getPlayerScores[0]}`;
+	}
 }
 
 var totalSeconds = 0;
@@ -485,9 +494,9 @@ function startExercise() {
                 document.getElementById("state5title").insertBefore(title, document.getElementById("timer"));
                 picture = document.createElement("img");
                 picture.id = "state5img";
-                picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+                picture.src = "pushup.gif";
                 picture.style.height = "20em";
-                picture.style.width = "40em";
+                picture.style.width = "30em";
                 document.getElementById("state5content").style.textAlign = "center";
                 document.getElementById("state5content").appendChild(picture);
                 exitState(5);
@@ -500,9 +509,9 @@ function startExercise() {
                 document.getElementById("state5title").insertBefore(title, document.getElementById("timer"));
                 picture = document.createElement("img");
                 picture.id = "state5img";
-                picture.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/956/027/fee.jpg";
+                picture.src = "pushup.gif";
                 picture.style.height = "20em";
-                picture.style.width = "40em";
+                picture.style.width = "30em";
                 document.getElementById("state5content").style.textAlign = "center";
                 document.getElementById("state5content").appendChild(picture);
                 exitState(5);
@@ -551,19 +560,36 @@ function startExercise() {
 }
 
 function exitToRandomExerciseIntro() {
-    document.getElementById("state4h1").remove();
-    document.getElementById("state4img").remove();
-    getRandomExercise();
+	totalSeconds = 0;
+	if(roundsLeft > 0) {
+		roundsLeft--;
+		document.getElementById("state4h1").remove();
+		document.getElementById("state4img").remove();
+		getRandomExercise();
+	} else {
+		if(!gInfo.getIsMultiplayer()) {
+			finishSP();
+			gInfo.setPlayerScore(0, gInfo.getPlayerScores[0] + document.getElementsByClassName("playerScoreInput").item(0).value);
+		} else {
+			finishMP();
+			gInfo.setPlayerScore(0, gInfo.getPlayerScores[0] + document.getElementsByClassName("playerScoreInput").item(0).value);
+			gInfo.setPlayerScore(1, gInfo.getPlayerScores[1] + document.getElementsByClassName("playerScoreInput").item(1).value);
+			gInfo.setPlayerScore(2, gInfo.getPlayerScores[2] + document.getElementsByClassName("playerScoreInput").item(2).value);
+			gInfo.setPlayerScore(3, gInfo.getPlayerScores[3] + document.getElementsByClassName("playerScoreInput").item(3).value);
+		}
+	}
 }
 
 function exitToState6() {
 	if(!gInfo.getIsMultiplayer()) {
-		document.getElementById("state6h1").innerHTML = "Type in your scores";
+		document.getElementById("state6h1").innerHTML = "Type in your score";
 		let input0 = document.createElement("input");
 		input0.className = "playerScoreInput";
 		input0.type = "number";
 		input0.onchange = function () {setScore(0, this.value);};
 		document.getElementById("state6in").insertBefore(input0, document.getElementById("state6button"));
+		document.getElementById("state6in").insertBefore(document.createElement("br"), document.getElementById("state6button"));
+		document.getElementById("state6in").insertBefore(document.createElement("br"), document.getElementById("state6button"));
 	} else {
 		document.getElementById("state6h1").innerHTML = "Type in your scores";
 		let input0 = document.createElement("input");
@@ -578,10 +604,10 @@ function exitToState6() {
 		input1.type = "number";
 		input2.type = "number";
 		input3.type = "number";
-		input0.onchange = function () {setScore(0, this.value);};
-		input1.onchange = function () {setScore(1, this.value);};
-		input2.onchange = function () {setScore(2, this.value);};
-		input3.onchange = function () {setScore(3, this.value);};
+		input0.setAttribute("onchange", function a () {setScore(0, this.value);});
+		input1.setAttribute("onchange", function b () {setScore(1, this.value);});
+		input2.setAttribute("onchange", function c () {setScore(2, this.value);});
+		input3.setAttribute("onchange", function d () {setScore(3, this.value);});
 		let pic0 = document.createElement("img");
 		let pic1 = document.createElement("img");
 		let pic2 = document.createElement("img");
@@ -615,6 +641,37 @@ function exitToState6() {
 		document.getElementById("state6in").insertBefore(document.createElement("br"), document.getElementById("state6button"));
 	}
 	exitState(6);
+}
+
+
+function finishSP() {
+	exitState(7);
+}
+
+function finishMP() {
+	let temp = 0;
+	let pos = 0;
+	for(let i = 0; i < gInfo._playerScores.length; ++i) {
+		if(gInfo._playerScores[i] > temp) {
+			temp = gInfo._playerScores[i];
+			pos = i;
+		}
+	}
+	let winnertext = document.createElement("h1");
+	winnertext.innerHTML = "Blue wins!";
+	document.getElementById("mpwinner").appendChild(winnertext);
+	let winner = document.createElement("img");
+	winner.src = ('0.png');
+	winner.height = "600";
+	winner.width = "400";
+	document.getElementById("mpwinner").appendChild(winner);
+	exitState(8);
+}
+
+function restartGame() {
+	exitState(0);
+	gInfo = new GameInfo();
+	roundsLeft = 0;
 }
 
 

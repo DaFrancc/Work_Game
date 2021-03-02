@@ -62,9 +62,9 @@
 					</p>
 				</section>
 				<section id="difficulty">
-					<input id="difficultyinput" type="number" min="1" value="1" onchange="setDifficulty(this.value)">
+					<input id="difficultyinput" type="number" min="1">
 					<br><br>
-					<button onclick="getRandomExercise()">Next</button>
+					<button onclick="setDifficulty(1); exitToRandomExerciseIntro()">Next</button>
 				</section>
 			</div>
 
@@ -77,10 +77,10 @@
 					</h1>
 				</section>
 				<section id="state3in">
-					<input class="playerNameInput" type="text" onchange="setPlayerName(0)" value="Abby"><br>
-					<input class="playerNameInput" type="text" onchange="setPlayerName(1)"><br>
-					<input class="playerNameInput" type="text" onchange="setPlayerName(2)"><br>
-					<input class="playerNameInput" type="text" onchange="setPlayerName(3)"><br>
+					<input class="playerNameInput" type="text" onchange="setPlayerName(0)" value="Francisco"><br>
+					<input class="playerNameInput" type="text" onchange="setPlayerName(1)" value="Juan"><br>
+					<input class="playerNameInput" type="text" onchange="setPlayerName(2)" value="Tejiri"><br>
+					<input class="playerNameInput" type="text" onchange="setPlayerName(3)" value="Elon"><br>
 					<br><br>
 					<button onclick="exitState(2)">Next</button>
 				</section>
@@ -90,7 +90,8 @@
 
 			<div class="gameState" id="state4">
 				<section id="state4title">
-
+					<h1 id="state4h1"></h1>
+					<img id="state4img">
 				</section>
 				<section id="state4content">
 
@@ -131,12 +132,35 @@
 			<div class="gameState" id="state7">
 				<section>
 					<h1>
-						Calculating...
+						Nice Job!
 					</h1>
 					<p id="state7Score"></p>
 				</section>
 				<section class>
-					<button onclick="exitToRandomExerciseIntro()">Next Exercise</button>
+					<button onclick="exitState(9)">Next Exercise</button>
+				</section>
+			</div>
+
+<!-- State 8 - Final Score Multiplayer -->
+
+			<div class="gameState" id="state8">
+				<section id="mpwinner">
+					
+				</section>
+				<section class>
+					<button onclick="restartGame()">Next Exercise</button>
+				</section>
+			</div>
+
+<!-- State 9 - Money -->
+
+			<div class="gameState" id="state9">
+				<section id="state9center">
+					<img src="gold.png" height="250px" width="250px">
+					<p id="state9Score">You got some coins!</p>
+				</section>
+				<section class>
+					<button onclick="restartGame()">Next Exercise</button>
 				</section>
 			</div>
 
