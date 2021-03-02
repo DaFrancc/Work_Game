@@ -237,7 +237,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #state4 button {
 	position: absolute;
-	height: 4em;
+	height: 2em;
 	width: 8em;
 	left: 50%;
 	margin-left: -4em;
@@ -353,7 +353,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #state8 button {
 	position: absolute;
-	height: 4em;
+	height: 2em;
 	width: 8em;
 	left: 50%;
 	margin-left: -4em;
