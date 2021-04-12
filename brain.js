@@ -76,7 +76,7 @@ class GameInfo {
 var gInfo;
 var minutesLabel;
 var secondsLabel;
-var roundsLeft;
+var roundsFinished;
 
 // Assigns a GameInfo object to gInfo once the page fully loads
 document.addEventListener('DOMContentLoaded', function(){
@@ -102,9 +102,11 @@ function exitState(nextState) {
 }
 
 // Custom function for State 2 for setting difficulty. No need to check if num is a number as the HTML takes care of that
-function setDifficulty(num) {
+function setDifficulty() {
+    let num = document.getElementById("difficultyinput").value;
+    if(num < 1) num = 1;
     gInfo.setNumOfRounds(num);
-	roundsLeft = num;
+	roundsFinished = 0;
 }
 
 // Custom function for State 1 for setting game mode and for changing states based off the game mode chosen
@@ -138,7 +140,7 @@ function getRandomExercise() {
         case 0:
             title = document.createElement("h1");
             title.id = "state4h1";
-            str = document.createTextNode(`Pushups - Round ${(gInfo.getNumOfRounds() - roundsLeft + 1)}`);
+            str = document.createTextNode(`Pushups - Round ${(gInfo.getNumOfRounds() - roundsFinished + 1)}`);
             title.appendChild(str);
             document.getElementById("state4content").appendChild(title);
             picture = document.createElement("img");
@@ -561,8 +563,8 @@ function startExercise() {
 
 function exitToRandomExerciseIntro() {
 	totalSeconds = 0;
-	if(roundsLeft > 0) {
-		roundsLeft--;
+	if(roundsFinished < gInfo.getNumOfRounds()) {
+		roundsFinished++;
 		document.getElementById("state4h1").remove();
 		document.getElementById("state4img").remove();
 		getRandomExercise();
@@ -671,7 +673,7 @@ function finishMP() {
 function restartGame() {
 	exitState(0);
 	gInfo = new GameInfo();
-	roundsLeft = 0;
+	roundsFinished = 0;
 }
 
 

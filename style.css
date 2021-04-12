@@ -3,17 +3,17 @@
 	margin: 0;
 }
 body {
-	color: #4F91F7;
+	color: #6CCDED;
 	font-size: 100%;
 }
 .gradient {
 	/* Old browsers */
-    background: #141E30;
+    background: #F7C094;
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(135deg, #F7B54F, #F77D4F);
+    /*background: -webkit-linear-gradient(135deg, #F7B54F, #F77D4F);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(135deg, #F7B54F, #F77D4F);
-	background-attachment: fixed;
+    /*background: linear-gradient(135deg, #F7B54F, #F77D4F);
+	background-attachment: fixed;*/
 }
 h1 {
 	font-family: "cooper-black-std", serif;
@@ -22,6 +22,7 @@ h1 {
 	text-align: center;
 	padding: 1em;
 	font-size: 4em;
+	text-shadow: #4F91F7 .05em .05em;
 }
 h2 {
 	font-family: "Fredoka One", serif;
@@ -29,6 +30,7 @@ h2 {
 	font-style: normal;
 	text-align: center;
 	font-size: 4em;
+	text-shadow: #4F91F7 .01em .01em;
 }
 #state0 h1 {
 	font-size: 8em;
@@ -40,6 +42,7 @@ p {
 	text-align: center;
 	padding-bottom: 1em;
 	font-size: 2.5em;
+	text-shadow: #4F91F7 .1em .1em;
 }
 input[type=number] { 
     -moz-appearance: textfield;
@@ -58,7 +61,7 @@ input[type=number]::-webkit-outer-spin-button {
 	margin-left: -50em;
 	margin-top: 7em;
 	transition: .5s;
-	background-color: #4ff7ec;
+	background-color: #f6b64f00;
 	border-radius: 5em;
 	width: 100em;
 	height: 50em;
@@ -86,8 +89,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #state0 button:hover {
 	transform: scale(1.1);
-	border: .2em solid #4F91F7;
-	color: #4F91F7;
+	border: .2em solid #6CCDED;
+	color: #6CCDED;
 }
 #black {
 	transform: translate(80%, -70%);
@@ -128,8 +131,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #topli button:hover {
 	transform: scale(1.1) translate(-45%, -67.5%);;
-	border: .2em solid #4F91F7;
-	color: #4F91F7;
+	border: .2em solid #6CCDED;
+	color: #6CCDED;
 }
 #topli li button {
 	transform: translate(-50%, -75%);
@@ -151,8 +154,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #bottomli button:hover {
 	transform: scale(1.1);
-	border: .2em solid #4F91F7;
-	color: #4F91F7;
+	border: .2em solid #6CCDED;
+	color: #6CCDED;
 }
 #bottomli li {
 	list-style: none;
@@ -186,8 +189,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #state2 button:hover {
 	transform: scale(1.1);
-	border: .2em solid #4F91F7;
-	color: #4F91F7;
+	border: .2em solid #6CCDED;
+	color: #6CCDED;
 }
 #state2 li {
 	transform: translateY(-65%);
@@ -200,11 +203,12 @@ input[type=number]::-webkit-outer-spin-button {
 #difficultyinput {
 	background-color: #00000000;
 	border: 0;
-	border-bottom: #4F91F7 solid .1em;
-	color: #4F91F7;
+	border-bottom: #4fbbdf solid .1em;
+	color: #6CCDED;
 	font-family: 'Raleway', sans-serif;
 	font-size: 5em;
 	width: 1.5em;
+	text-shadow: #4F91F7 .05em .05em;
 }
 
 /* State 3 */
@@ -233,11 +237,12 @@ input[type=number]::-webkit-outer-spin-button {
 .playerNameInput {
 	background-color: #00000000;
 	border: 0;
-	border-bottom: #4F91F7 solid .1em;
-	color: #4F91F7;
+	border-bottom: #4fbbdf solid .1em;
+	color: #6CCDED;
 	font-family: 'Raleway', sans-serif;
 	font-size: 5em;
 	width: 10em;
+	text-shadow: #4F91F7 .05em .05em;
 }
 
 /* State 4 */
@@ -262,8 +267,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #state4 button:hover {
 	transform: scale(1.1);
-	border: .2em solid #4F91F7;
-	color: #4F91F7;
+	border: .2em solid #6CCDED;
+	color: #6CCDED;
 }
 
 /* State 5 */
@@ -288,8 +293,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #state5 button:hover {
 	transform: scale(1.1);
-	border: .2em solid #4F91F7;
-	color: #4F91F7;
+	border: .2em solid #6CCDED;
+	color: #6CCDED;
 }
 
 /* State 6 */
@@ -314,8 +319,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #state6 button:hover {
 	transform: scale(1.1);
-	border: .2em solid #4F91F7;
-	color: #4F91F7;
+	border: .2em solid #6CCDED;
+	color: #6CCDED;
 }
 #state6in {
 	text-align: center;
@@ -323,11 +328,15 @@ input[type=number]::-webkit-outer-spin-button {
 .playerScoreInput {
 	background-color: #00000000;
 	border: 0;
-	border-bottom: #4F91F7 solid .1em;
-	color: #4F91F7;
+	border-bottom: #4fbbdf solid .1em;
+	color: #6CCDED;
 	font-family: 'Raleway', sans-serif;
 	font-size: 5em;
 	width: 1.5em;
+	text-shadow: #4F91F7 .05em .05em;
+}
+#timer {
+	text-shadow: #4F91F7 .05em .05em;
 }
 
 /* State 7 - Final Score Singleplayer */
@@ -352,8 +361,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #state7 button:hover {
 	transform: scale(1.1);
-	border: .2em solid #4F91F7;
-	color: #4F91F7;
+	border: .2em solid #6CCDED;
+	color: #6CCDED;
 }
 
 /* State 8 - Welcome Screen */
@@ -378,8 +387,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #state8 button:hover {
 	transform: scale(1.1);
-	border: .2em solid #4F91F7;
-	color: #4F91F7;
+	border: .2em solid #6CCDED;
+	color: #6CCDED;
 }
 #mpwinner {
 	text-align: center;
@@ -410,8 +419,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #state9 button:hover {
 	transform: scale(1.1);
-	border: .2em solid #4F91F7;
-	color: #4F91F7;
+	border: .2em solid #6CCDED;
+	color: #6CCDED;
 }
 #state9center {
 	text-align: center;
