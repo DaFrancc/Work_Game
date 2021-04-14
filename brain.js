@@ -145,9 +145,9 @@ function getRandomExercise() {
             document.getElementById("state4content").appendChild(title);
             picture = document.createElement("img");
             picture.id = "state4img";
-            picture.src = "pushup.gif";
+            picture.src = "pushup2.png";
             picture.style.height = "20em";
-            picture.style.width = "30em";
+            picture.style.width = "20em";
             document.getElementById("state4content").style.textAlign = "center";
             document.getElementById("state4content").appendChild(picture);
             exitState(4);
@@ -160,9 +160,9 @@ function getRandomExercise() {
             document.getElementById("state4content").appendChild(title);
             picture = document.createElement("img");
             picture.id = "state4img";
-            picture.src = "pushup.gif";
+            picture.src = "pushup2.png";
             picture.style.height = "20em";
-            picture.style.width = "40em";
+            picture.style.width = "20em";
             document.getElementById("state4content").style.textAlign = "center";
             document.getElementById("state4content").appendChild(picture);
             exitState(4);
@@ -496,9 +496,9 @@ function startExercise() {
                 document.getElementById("state5title").insertBefore(title, document.getElementById("timer"));
                 picture = document.createElement("img");
                 picture.id = "state5img";
-                picture.src = "pushup.gif";
+                picture.src = "pushup2.png";
                 picture.style.height = "20em";
-                picture.style.width = "30em";
+                picture.style.width = "20em";
                 document.getElementById("state5content").style.textAlign = "center";
                 document.getElementById("state5content").appendChild(picture);
                 exitState(5);
@@ -511,9 +511,9 @@ function startExercise() {
                 document.getElementById("state5title").insertBefore(title, document.getElementById("timer"));
                 picture = document.createElement("img");
                 picture.id = "state5img";
-                picture.src = "pushup.gif";
+                picture.src = "pushup2.png";
                 picture.style.height = "20em";
-                picture.style.width = "30em";
+                picture.style.width = "20em";
                 document.getElementById("state5content").style.textAlign = "center";
                 document.getElementById("state5content").appendChild(picture);
                 exitState(5);
